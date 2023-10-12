@@ -72,12 +72,14 @@ async def task(username: str, channel_id: int, task_command: str):
         sleep_time2 = extract_time_units(msg)
         print(f"{task_command} is sleeping for {sleep_time2} seconds")
         await asyncio.sleep(sleep_time2)
-        print(f'Done with {task_command} Task')
+        timestamp = datetime.now().strftime("%H:%M")
+        print(f'Done with {task_command} Task. TIME: {timestamp}')
 
     else:
         print(f"{task_command} is sleeping for {sleep_time} seconds!")
         await asyncio.sleep(sleep_time)
-        print(f'Done with {task_command} Task')
+        timestamp = datetime.now().strftime("%H:%M")
+        print(f'Done with {task_command} Task. TIME: {timestamp}')
 
 
 # create event loop
